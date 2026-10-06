@@ -24,7 +24,7 @@ def get_kpis():
                                                 FROM stock_entries WHERE `change_type` = 'Restock'
                                                 ORDER BY `entry_date` DESC)
                                                 SELECT 
-                                                ROUND(SUM(t1.`change_quantity`* p.`price`),2) AS 'Total Restock Last3months'
+                                                ROUND(SUM(t1.`change_quantity`* p.`price`),2) AS 'Total Restock Last 3months'
                                                 FROM t1 LEFT JOIN products AS p
                                                 ON t1.`product_id` = p.`product_id`
                                                 WHERE `entry_date` >=`prev_3month`;

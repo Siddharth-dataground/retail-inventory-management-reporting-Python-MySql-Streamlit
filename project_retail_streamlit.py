@@ -34,8 +34,8 @@ except Exception as e:
 
 # ----------------------------------------------------------------------------------
 # Titles and headers
-st.title('📦 Inventory and Supply Chain Dashboard')
-st.sidebar.header('📈 Inventory Management Dashboard')
+st.title('📦 Retail Inventory and Supply Chain Dashboard')
+st.sidebar.header('📈 Inventory Operations')
 
 # ------------------- Sidebar -----------------------------------------------------
 option = st.sidebar.radio('Select Option', ['Dashboard','Operational Task'])

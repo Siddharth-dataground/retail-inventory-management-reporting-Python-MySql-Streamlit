@@ -283,7 +283,7 @@ AND
 -- -------------------------------------------------------------------------------------------------------------------------
 -- -------------------------------------------------------------------------------------------------------------------------
 
--- check 2
+
 -- How much inventory is available in each product category, and how many products are below their reorder level?
 -- we will see product counts, quantity, inventory value, products at or below reorder level
 SELECT 
@@ -295,7 +295,7 @@ FROM products
 GROUP BY `category`
 ORDER BY `Total Inventory Value` DESC;
 
--- Check3 
+
 -- Inventory health check
 -- we will see product_id, product_name, category, stock_quantity, reorder_level
 SELECT 
@@ -312,7 +312,7 @@ WHEN `stock_quantity`=`reorder_level` THEN 2
 ELSE 3
 END;
 
--- check 4
+
 -- Now lets see how much products come under these 3 category
 
 SELECT 
@@ -610,50 +610,8 @@ COMMIT;
 END$$
 DELIMITER ;
 
--- CALL order_received(48); -- lets check the reorder_id = 5
--- SELECT * FROM stock_entries ORDER BY entry_id DESC;
--- SELECT * FROM shipments ORDER BY shipment_id DESC;
-
--- SELECT * FROM reorders; -- '40', '48', '156', '2024-09-18', 'Pending'
-
-/*
-SELECT * FROM reorders WHERE `status` = 'Ordered'; -- '5', '114', '62', '2024-08-02', 'Ordered'
-
-UPDATE products
-SET `stock_quantity` = `stock_quantity` - 62
-WHERE `product_id` = 114;
-
-UPDATE reorders
-SET `status` = 'Ordered'
-WHERE `reorder_id` = 5;
-
-DELETE FROM shipments WHERE `shipment_id` = 1001;
-DELETE FROM stock_entries WHERE `entry_id` = 3001;
-*/
-
-SHOW TABLES;
-
-SELECT * FROM products ORDER BY `product_id` DESC;
-ALTER TABLE products AUTO_INCREMENT = 200;
-DELETE FROM products
-WHERE `product_id` > 200;
-
-SELECT * FROM reorders ORDER BY `reorder_id` DESC;
-ALTER TABLE reorders AUTO_INCREMENT = 500;
 
 
-SELECT * FROM stock_entries ORDER BY `entry_id` DESC;
-DELETE FROM stock_entries
-WHERE `entry_id` >3000;
-ALTER TABLE stock_entries AUTO_INCREMENT = 3000;
-
-
-SELECT * FROM shipments ORDER BY `shipment_id` DESC; 
-DELETE FROM shipments
-WHERE shipment_id >1000;
-ALTER TABLE shipments AUTO_INCREMENT = 1000;
-
-SELECT * FROM suppliers;
 
 
 
