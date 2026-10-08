@@ -249,7 +249,7 @@ retail-inventory-management-reporting/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/<your-username>/retail-inventory-management-reporting.git
+git clone https://github.com/Siddharth-dataground/retail-inventory-management-reporting-Python-MySql-Streamlit-.git
 cd retail-inventory-management-reporting
 ```
 
